@@ -13,6 +13,8 @@ module.exports = function (grunt) {
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
     // configurable paths
     var yeomanConfig = {
         app: 'app',
@@ -291,7 +293,15 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'bower_components/sass-bootstrap/fonts/*.*'
+                    ]
+                }, {
+                    expand: true,
+                    flatten: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.dist %>/font/',
+                    src: [
                         'bower_components/components-font-awesome/font/*.*'
                     ]
                 }]
