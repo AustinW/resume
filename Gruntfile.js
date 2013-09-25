@@ -293,7 +293,15 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'bower_components/sass-bootstrap/fonts/*.*'
+                    ]
+                }, {
+                    expand: true,
+                    flatten: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.dist %>/font',
+                    src: [
                         'bower_components/components-font-awesome/font/*.*'
                     ]
                 }]
