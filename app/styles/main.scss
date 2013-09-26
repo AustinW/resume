@@ -102,3 +102,14 @@ body {
 .text-bronze {
     color:#663300;
 }
+
+p { margin: 10px }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { p { margin: 0 } }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { p { margin: 0 } }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { p { margin: 0 } }
