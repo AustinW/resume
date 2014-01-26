@@ -10,12 +10,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-  <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="bower_components/modernizr/modernizr.js"></script>
-  <!-- endbuild -->
+  
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <!--[if lt IE 10]>
@@ -264,6 +260,24 @@
           <a href="http://www.djangoproject.com" target="_blank">Django</a>,
           <a href="http://flask.pocoo.org" target="_blank">Flask</a>
         </em>
+
+        <div class="page-header">
+          <h2>Education</h2>
+        </div>
+
+        <ul class="list-unstyled">
+          <li>
+            <strong>Cal State Fullerton</strong><br />
+            B.S. Computer Science<br />
+            Spring 2013 Computer Science Dean's List<br />
+            <small>2012-2014 (expected)</small>
+          </li>
+          <li>
+            <strong>Orange Coast College</strong><br />
+            A.A. Computer Science<br />
+            <small>2007-2011</small>
+          </li>
+        </ul>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -291,7 +305,7 @@
               emerging open source software.
             </p>
           </li>
-          <li>
+          <li style="margin-top:10px">
             <strong>Elite Coach</strong><br />
             <small><strong>World Elite Gymnastics</strong></small><br />
             <small>2005-Present</small>
@@ -303,24 +317,6 @@
               USA National Team as well as becoming part of the team competing at prestigious international
               competitions such as World Championships.
             </p>
-          </li>
-        </ul>
-
-        <div class="page-header">
-          <h2>Education</h2>
-        </div>
-
-        <ul class="list-unstyled">
-          <li>
-            <strong>Cal State Fullerton</strong><br />
-            B.S. Computer Science<br />
-            Spring 2013 Computer Science Dean's List<br />
-            <small>2012-2014 (expected)</small>
-          </li>
-          <li>
-            <strong>Orange Coast College</strong><br />
-            A.A. Computer Science<br />
-            <small>2007-2011</small>
           </li>
         </ul>
 
@@ -377,12 +373,6 @@
   </div>
 
 
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="bower_components/jquery/jquery.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -395,8 +385,10 @@
 
   </script>
 
-  <!-- build:js scripts/main.js -->
-  <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
-  <!-- endbuild -->
+  <script src="js/vendor/jquery-2.1.0.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>
