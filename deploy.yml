@@ -1,5 +1,5 @@
 ---
-- name: Deploy resumé app to resume.austinw.me
+- name: Deploy resume app to resume.austinw.me
   hosts: all
   vars:
     ansistrano_deploy_from: "./" # Where my local project is
