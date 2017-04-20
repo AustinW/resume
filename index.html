@@ -28,6 +28,14 @@
   @media (min-width:992px){p{margin:0}}
   @media (min-width:1200px){p{margin:0}}
   
+  .projects li {
+    margin: 25px 0;
+  }
+  
+  .project-details li {
+    margin: 5px 0;
+  }
+  
   .label-laravel {background-color:#fb503b;}
   .label-bootstrap {background-color:#5b4282;}
   .label-heroku {background-color:#5a52a3;}
@@ -60,6 +68,46 @@
     .social-links{float:right;clear:right;}
   }
   
+  @media print {
+    a[href]:after {
+      content: none;
+    }
+    
+    .nav-pills li {
+      float: left;
+      display:inline;
+    }
+    
+    .nav-pills>li a[href]:after {
+      content: " " attr(title);
+    }
+    
+    .thumbnail {
+      border:none;
+      margin-bottom:0;
+      padding:0;
+    }
+    
+    .thumbnail img {
+      border-radius:5px;
+    }
+    
+    .github-link a[href] {
+      visibility: hidden;
+      position:relative;
+    }
+    
+    .github-link a[href]:after {
+      visibility: visible;
+      position:absolute;
+      top:0;
+      left: 0;
+      content: " " attr(title);
+    }
+    
+    .col-print-12{width:100%; float:left;}
+  }
+  
   </style>
 </head>
 <body>
@@ -77,19 +125,19 @@
               <h3 class="text-muted project-name">
                 <img src="images/avatar.jpg" alt="Austin White" class="img-circle" style="height:50px" />
                 Resume
-                <a href="javascript:window.print()"><i class="icon-print"></i></a>
+                <a href="javascript:window.print()" class="hidden-print"><i class="icon-print"></i></a>
               </h3>
             </div>
             
             <div class="col-sm-12 col-md-6 col-lg-6">
               <ul class="nav nav-pills social-links">
 
-                <li><a href="https://www.github.com/austinw" target="_blank"><i class="icon-github"></i></a></li>
-                <li><a href="https://www.facebook.com/austingym" target="_blank"><i class="icon-facebook"></i></a></li>
-                <li><a href="https://www.twitter.com/austingym" target="_blank"><i class="icon-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/austingym" target="_blank"><i class="icon-linkedin"></i></a></li>
-                <li><a href="http://www.instagram.com/austingym" target="_blank"><i class="icon-instagram"></i></a></li>
-                <li><a href="https://www.youtube.com/austingym" target="_blank"><i class="icon-youtube"></i></a></li>
+                <li><a href="https://www.github.com/austinw" title="@austinw" target="_blank"><i class="icon-github"></i></a></li>
+                <li><a href="https://www.facebook.com/austingym" title="austingym" target="_blank"><i class="icon-facebook"></i></a></li>
+                <li><a href="https://www.twitter.com/austingym" title="@austingym" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/austingym" title="austingym" target="_blank"><i class="icon-linkedin"></i></a></li>
+                <li><a href="http://www.instagram.com/austingym" title="@austingym" target="_blank"><i class="icon-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/austingym" title="austingym" target="_blank"><i class="icon-youtube"></i></a></li>
 
               </ul>
             </div>
@@ -106,20 +154,20 @@
           </p>
           <p><a class="btn btn-lg btn-success hidden-print" href="mailto:austingym@gmail.com"><i class="icon-envelope"></i> Contact Me!</a></p>
           
-          <div class="row hidden-print" style="padding-top:15px">
-            <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="row" style="padding-top:15px">
+            <div class="col-sm-6 col-md-6 col-lg-6 hidden-print">
               <a href="#" class="thumbnail">
                 <img src="images/developer-heroku-hq.png" alt="Web Developer" style="height:200px" />
               </a>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-sm-6 col-md-6 col-lg-6 col-print-12">
               <a href="#" class="thumbnail">
                 <img src="images/gymnast.jpg" alt="Gymnast" style="height:200px" />
               </a>
             </div>
           </div>
           
-          <div class="row" style="padding-top:15px">
+          <div class="row hidden-print" style="padding-top:15px">
             <div class="col-sm-10 col-sm-offset-1">
               <div class="embed-responsive embed-responsive-4by3">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ybfG83vd7VU" allowfullscreen></iframe>
@@ -158,95 +206,85 @@
 
           <div class="col-sm-12 col-md-6 col-lg-6">
 
-            <ul class="list-unstyled">
+            <ul class="list-unstyled projects">
               
               <li>
-                <h4>T&amp;T Videos <a href="http://usag-videos.austinw.me" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i>
-                      <span class="label label-laravel">Laravel</span>
-                      <span class="label label-vue">Vue.js</span>
-                      <span class="label label-default">Javascript</span>
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="http://usag-videos.austinw.me" target="_blank"><i class="icon-globe"></i> http://usag-videos.austinw.me</a></li>
-                    <li><a href="https://github.com/AustinW/usag-videos" target="_blank"><i class="icon-github"></i> https://github.com/AustinW/usag-videos</a></li>
-                  </ul>
-                </p>
+                <h4>T&amp;T Videos <a href="http://usag-videos.austinw.me" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i>
+                    <span class="label label-laravel">Laravel</span>
+                    <span class="label label-vue">Vue.js</span>
+                    <span class="label label-default">Javascript</span>
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li><i class="icon-globe"></i> <a href="http://usag-videos.austinw.me" target="_blank">http://usag-videos.austinw.me</a></li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="AustinW/usag-videos" href="https://github.com/AustinW/usag-videos" target="_blank">https://github.com/AustinW/usag-videos</a></li>
+                </ul>
               </li>
 
               <li>
-                <h4>Fitness Evaluation <a href="http://we-fitness-evaluation.herokuapp.com/" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li><i class="icon-code"></i>
-                      <span class="label label-python">Python</span>
-                      <span class="label label-default">Flask</span>
-                      <span class="label label-angular">Angular</span>
-                      <span class="label label-default">Javascript</span>
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="http://we-fitness-evaluation.herokuapp.com/" target="_blank"><i class="icon-globe"></i> http://we-fitness-evaluation.herokuapp.com/</a></li>
-                    <li><a href="https://github.com/austinw/fitness-evaluation" target="_blank"><i class="icon-github"></i> https://github.com/austinw/fitness-evaluation</a></li>
-                  </ul>
-                </p>
+                <h4>Fitness Evaluation <a href="http://we-fitness-evaluation.herokuapp.com/" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li><i class="icon-code"></i>
+                    <span class="label label-python">Python</span>
+                    <span class="label label-default">Flask</span>
+                    <span class="label label-angular">Angular</span>
+                    <span class="label label-default">Javascript</span>
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li><i class="icon-globe"></i> <a href="http://we-fitness-evaluation.herokuapp.com/" target="_blank">http://we-fitness-evaluation.herokuapp.com/</a></li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="AustinW/fitness-evaluation" href="https://github.com/AustinW/fitness-evaluation" target="_blank">https://github.com/austinw/fitness-evaluation</a></li>
+                </ul>
               </li>
 
               <li>
-                <h4>TripCost <a href="http://trip-cost.herokuapp.com" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i>
-                      <span class="label label-python">Python</span>
-                      <span class="label label-default">Flask</span>
-                      <span class="label label-jquery">jQuery</span>
-                      <span class="label label-default">Javascript</span>
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="http://trip-cost.herokuapp.com" target="_blank"><i class="icon-globe"></i> http://trip-cost.herokuapp.com</a></li>
-                    <li><a href="https://github.com/CPSC362/TripCost" target="_blank"><i class="icon-github"></i> https://github.com/CPSC362/TripCost</a></li>
-                  </ul>
-                </p>
+                <h4>TripCost <a href="http://trip-cost.herokuapp.com" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i>
+                    <span class="label label-python">Python</span>
+                    <span class="label label-default">Flask</span>
+                    <span class="label label-jquery">jQuery</span>
+                    <span class="label label-default">Javascript</span>
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li><i class="icon-globe"></i> <a href="http://trip-cost.herokuapp.com" target="_blank">http://trip-cost.herokuapp.com</a></li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="CPSC362/TripCost" href="https://github.com/CPSC362/TripCost" target="_blank">https://github.com/CPSC362/TripCost</a></li>
+                </ul>
               </li>
               
               <li>
                 <h4>Forum</h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i> 
-                      <span class="label label-php">PHP</span>
-                      <span class="label label-codeigniter">CodeIgniter</span>
-                      <span class="label label-mysql">MySQL</span>
-                      <span class="label label-jquery">jQuery</span>
-                      <span class="label label-default">Javascript</span>
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="https://github.com/CPSC431/forum" target="_blank"><i class="icon-github"></i> https://github.com/CPSC431/forum</a></li>
-                  </ul>
-                </p>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i> 
+                    <span class="label label-php">PHP</span>
+                    <span class="label label-codeigniter">CodeIgniter</span>
+                    <span class="label label-mysql">MySQL</span>
+                    <span class="label label-jquery">jQuery</span>
+                    <span class="label label-default">Javascript</span>
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="CPSC431/forum" href="https://github.com/CPSC431/forum" target="_blank">https://github.com/CPSC431/forum</a></li>
+                </ul>
               </li>
 
               <li>
                 <h4>"Craigslist"</h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i>
-                      <span class="label label-default">PagodaBox</span>
-                      <span class="label label-php">PHP</span>
-                      <span class="label label-laravel">Laravel</span>
-                      <span class="label label-mysql">MySQL</span>
-                      <span class="label label-jquery">jQuery</span>
-                      <span class="label label-default">Javascript</span>
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="https://github.com/CPSC254/advertising-website" target="_blank"><i class="icon-github"></i> https://github.com/CPSC254/advertising-website</a></li>
-                  </ul>
-                </p>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i>
+                    <span class="label label-default">PagodaBox</span>
+                    <span class="label label-php">PHP</span>
+                    <span class="label label-laravel">Laravel</span>
+                    <span class="label label-mysql">MySQL</span>
+                    <span class="label label-jquery">jQuery</span>
+                    <span class="label label-default">Javascript</span>
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="CPSC254/advertising-website" href="https://github.com/CPSC254/advertising-website" target="_blank">https://github.com/CPSC254/advertising-website</a></li>
+                </ul>
               </li>
 
             </ul>
@@ -255,63 +293,55 @@
 
           <div class="col-sm-12 col-md-6 col-lg-6">
 
-            <ul class="list-unstyled">
+            <ul class="list-unstyled projects">
 
               <li>
-                <h4>Contact Manager <a href="http://cpsc473-contact-manager.herokuapp.com/" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i>
-                      <span class="label label-heroku">Heroku</span> 
-                      <span class="label label-python">Python</span> 
-                      <span class="label label-default">Bottle</span> 
-                      <span class="label label-mongo">MongoDB</span> 
-                      <span class="label label-backbone">Backbone.js</span> 
-                      <span class="label label-default">Javascript</span> 
-                      <span class="label label-bootstrap">Bootstrap</span>
-                    </li>
-                    <li><a href="http://cpsc473-contact-manager.herokuapp.com/" target="_blank"><i class="icon-globe"></i> http://cpsc473-contact-manager.herokuapp.com/</a></li>
-                    <li><a href="https://github.com/AustinW/contact-manager" target="_blank"><i class="icon-github"></i> https://github.com/AustinW/contact-manager</a></li>
-                  </ul>
-                </p>
+                <h4>Contact Manager <a href="http://cpsc473-contact-manager.herokuapp.com/" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i>
+                    <span class="label label-heroku">Heroku</span> 
+                    <span class="label label-python">Python</span> 
+                    <span class="label label-default">Bottle</span> 
+                    <span class="label label-mongo">MongoDB</span> 
+                    <span class="label label-backbone">Backbone.js</span> 
+                    <span class="label label-default">Javascript</span> 
+                    <span class="label label-bootstrap">Bootstrap</span>
+                  </li>
+                  <li><i class="icon-globe"></i> <a href="http://cpsc473-contact-manager.herokuapp.com/" target="_blank">http://cpsc473-contact-manager.herokuapp.com/</a></li>
+                  <li class="github-link"><i class="icon-github"></i> <a title="AustinW/contact-manager" href="https://github.com/AustinW/contact-manager" target="_blank">https://github.com/AustinW/contact-manager</a></li>
+                </ul>
               </li>
               
               <li>
-                <h4>"About.me" <a href="http://nocturnalreprimand.appspot.com/" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li>
-                      <i class="icon-code"></i> 
-                      <span class="label label-default">Google App Engine</span> 
-                      <span class="label label-python">Python</span> 
-                      <span class="label label-bootstrap">Bootstrap</span> 
-                      <span class="label label-jquery">jQuery</span>
-                    </li>
-                    <li><a href="http://nocturnalreprimand.appspot.com/" target="_blank"><i class="icon-globe"></i> http://nocturnalreprimand.appspot.com/</a></li>
-                    <li><a href="https://www.dropbox.com/sh/wjuia96f943pyka/S-mA0ugTgk" target="_blank"><i class="icon-github"></i> https://www.dropbox.com/sh/wjuia96f943pyka/S-mA0ugTgk</a></li>
-                  </ul>
-                </p>
+                <h4>"About.me" <a href="http://nocturnalreprimand.appspot.com/" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li>
+                    <i class="icon-code"></i> 
+                    <span class="label label-default">Google App Engine</span> 
+                    <span class="label label-python">Python</span> 
+                    <span class="label label-bootstrap">Bootstrap</span> 
+                    <span class="label label-jquery">jQuery</span>
+                  </li>
+                  <li><i class="icon-globe"></i> <a href="http://nocturnalreprimand.appspot.com/" target="_blank">http://nocturnalreprimand.appspot.com/</a></li>
+                  <li><i class="icon-github"></i> <a href="https://www.dropbox.com/sh/wjuia96f943pyka/S-mA0ugTgk" target="_blank">https://www.dropbox.com/sh/wjuia96f943pyka/S-mA0ugTgk</a></li>
+                </ul>
               </li>
 
               <li>
-                <h4>Laravel Presentation <a href="http://goo.gl/3tyhZT" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li><a href="http://www.laravel.com" target="_blank"><i class="icon-info-sign"></i> Laravel</a></li>
-                    <li><a href="http://goo.gl/3tyhZT" target="_blank"><i class="icon-globe"></i> http://goo.gl/3tyhZT</a></li>
-                  </ul>
-                </p>
+                <h4>Laravel Presentation <a href="http://goo.gl/3tyhZT" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li><i class="icon-info-sign"></i> <a href="http://www.laravel.com" target="_blank">Laravel</a></li>
+                  <li><i class="icon-globe"></i> <a href="http://goo.gl/3tyhZT" target="_blank">http://goo.gl/3tyhZT</a></li>
+                </ul>
               </li>
 
               <li>
-                <h4>Backbone.js Presentation <a href="http://slid.es/austinw/backbonejs" target="_blank"><i class="icon-external-link"></i></a></h4>
-                <p>
-                  <ul class="list-unstyled">
-                    <li><a href="http://backbonejs.org" target="_blank"><i class="icon-info-sign"></i> Backbone.js</a></li>
-                    <li><a href="http://slid.es/austinw/backbonejs" target="_blank"><i class="icon-globe"></i> http://slid.es/austinw/backbonejs</a></li>
-                  </ul>
-                </p>
+                <h4>Backbone.js Presentation <a href="http://slid.es/austinw/backbonejs" target="_blank" class="hidden-print"><i class="icon-external-link"></i></a></h4>
+                <ul class="list-unstyled project-details">
+                  <li><i class="icon-info-sign"></i> <a href="http://backbonejs.org" target="_blank">Backbone.js</a></li>
+                  <li><i class="icon-globe"></i> <a href="http://slid.es/austinw/backbonejs" target="_blank">http://slid.es/austinw/backbonejs</a></li>
+                </ul>
               </li>
 
             </ul>
@@ -527,7 +557,7 @@
 
             <h4><i class="icon-film"></i> Videos</h4>
 
-            <ul>
+            <ul class="video-links">
               <li><a href="https://www.youtube.com/watch?v=ybfG83vd7VU">2015 World Championships Double Mini Finals 2</a><!-- 2015-11-28 --><br /></li>
               <li><a href="https://www.youtube.com/watch?v=68VSs7WKEoI">2015 World Championships Double Mini Finals 1</a><!-- 2015-11-28 --><br /></li>
               <li><a href="https://www.youtube.com/watch?v=DGXympoGrP0">2015 World Championships Double Mini Team Finals</a><!-- 2015-11-27 --><br /></li>
